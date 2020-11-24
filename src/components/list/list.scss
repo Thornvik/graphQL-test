@@ -6,8 +6,9 @@
   flex-wrap: wrap;
   align-content: center;
 
-  & :not(:last-child) {
+  div {
     flex: 1 0 25rem;
-    margin: 0 1rem 1rem 0;
+    margin: 0 1rem 1rem 1rem;
+    max-width: 25rem;
   }
 }

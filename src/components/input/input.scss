@@ -1,0 +1,35 @@
+form {
+  margin: 4rem auto;
+
+  .input-field,
+  .input-button {
+    height: 4rem;
+  }
+
+  .input-field {
+    width: 25rem;
+    padding-left: 1rem;
+    box-shadow: inset -4px -4px 14px #ffffff,
+      inset 1px 1px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    border: none;
+    background-color: #ededed;
+  }
+
+  .input-button {
+    margin-left: 1rem;
+    padding: 1rem;
+    background-color: #ededed;
+
+    box-shadow: -6px -6px 20px #ffffff, 6px 6px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    border: none;
+    color: #08cfa4;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: inset -4px -4px 14px #ffffff,
+        inset 1px 1px 14px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

@@ -1,30 +1,24 @@
 import React from "react";
 import "./styles/main.scss";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 import Context from "./context/context";
 
+import { EXCHANGE_RATES } from "./graphql/queries/queries";
+
 import Loading from "./components/loading/loading";
 import List from "./components/list/list";
-
-const EXCHANGE_RATES = gql`
-  query GetExchangeRates {
-    rates(currency: "USD") {
-      currency
-      rate
-      name
-    }
-  }
-`;
+import Input from "./components/input/input";
 
 function App() {
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
 
   if (loading) return <Loading />;
-  if (error) return <p>awww shiet... :C</p>;
+  if (error) return <img src="https://i.imgur.com/lKJiT77.png" alt="" />;
 
   return (
     <div className="app">
+      <Input />
       <Context.Provider value={data.rates}>
         <List />
       </Context.Provider>
