@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/main.scss";
 import { useQuery, gql } from "@apollo/client";
 
-import { DataModel } from "./models/data-model";
+import Context from "./context/context";
 
 import Loading from "./components/loading/loading";
 import List from "./components/list/list";
@@ -25,11 +25,9 @@ function App() {
 
   return (
     <div className="app">
-      <div className="currency-list">
-        {data.rates.map((rates: DataModel) =>
-          rates.name ? <List key={rates.currency} {...rates}></List> : null
-        )}
-      </div>
+      <Context.Provider value={data.rates}>
+        <List />
+      </Context.Provider>
     </div>
   );
 }
