@@ -11,7 +11,7 @@ import {
 
 import Loading from "./components/loading/loading";
 import List from "./components/list/list";
-import Input from "./components/input/input";
+import Form from "./components/form/form";
 
 function App() {
   const specificCurrency = "SEK";
@@ -21,10 +21,10 @@ function App() {
 
   if (loading) return <Loading />;
   if (error) return <img src="https://i.imgur.com/lKJiT77.png" alt="" />;
-
+  console.log(data.rates);
   return (
     <div className="app">
-      <Input />
+      <Form />
       <Context.Provider value={data.rates}>
         <List />
       </Context.Provider>
