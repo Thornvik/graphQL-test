@@ -1,5 +1,5 @@
 form {
-  margin: 4rem auto;
+  margin: 0 auto;
 
   .input-field,
   .input-button {
@@ -32,4 +32,8 @@ form {
         inset 1px 1px 14px rgba(0, 0, 0, 0.15);
     }
   }
+}
+
+.invalid {
+  color: red;
 }

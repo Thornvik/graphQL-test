@@ -8,7 +8,7 @@ type FormValues = {
 };
 
 const Input = () => {
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register, errors } = useForm({ mode: "onBlur" });
   const onSubmit: SubmitHandler<FormValues> = () => console.log("valid email");
 
   return (
@@ -26,10 +26,10 @@ const Input = () => {
           className="input-field"
           placeholder="Enter a email"
         />
-        {errors.email && console.log("Invalid email adress")}
         <button type="submit" className="input-button">
-          Test
+          Submit
         </button>
+        {errors.email ? <p className="invalid">invalid email</p> : null}
       </form>
     </div>
   );

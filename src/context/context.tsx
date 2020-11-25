@@ -1,5 +1,7 @@
 import { createContext } from "react";
 
-const Context = createContext(undefined);
+import { DataModel } from "../models/data-model";
+
+const Context = createContext<DataModel | undefined>(undefined);
 
 export default Context;
