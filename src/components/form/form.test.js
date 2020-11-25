@@ -16,31 +16,33 @@ describe("form component", () => {
   });
 
   it("should not display error if email is correct", async () => {
+    let email = "test@gmail.com";
     fireEvent.input(screen.getByTestId("input", { name: /email/i }), {
       target: {
-        value: "test@gmail.com",
+        value: email,
       },
     });
 
     fireEvent.submit(screen.getByRole("button"));
 
     expect(await screen.getByTestId("input", { name: /email/i }).value).toBe(
-      "test@gmail.com"
+      email
     );
     expect(screen.getByTestId("itWorks")).toBeTruthy();
   });
 
   it("should display error if email is incorrect", async () => {
+    let incorrectEmail = "test@gmail";
     fireEvent.input(screen.getByTestId("input", { name: /email/i }), {
       target: {
-        value: "testgmail.com",
+        value: incorrectEmail,
       },
     });
 
     fireEvent.submit(screen.getByRole("button"));
 
     expect(await screen.getByTestId("input", { name: /email/i }).value).toBe(
-      "testgmail.com"
+      incorrectEmail
     );
     expect(screen.getByTestId("error-text")).toBeTruthy();
   });
