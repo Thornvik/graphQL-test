@@ -12,7 +12,6 @@ export const Form = () => {
   //defValue is only used for testing
   const { handleSubmit, register, errors, reset } = useForm({ mode: "onBlur" });
   const onSubmit: SubmitHandler<FormValues> = () => {
-    console.log("valid email");
     reset();
   };
 
